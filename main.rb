@@ -9,4 +9,4 @@ user = User.new("LiveUser", "live@user.com")
 tree = Tree.new
 tree.initial_tree(user.name)
 tree.touch "home/LiveUser/myfile.txt"
-puts tree.ls "home/LiveUser/"
+tree.ls "home/LiveUser/"

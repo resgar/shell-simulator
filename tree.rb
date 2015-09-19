@@ -4,18 +4,18 @@ class Tree
   end
   
   def fid_to_path(fid)
-    stack = []
+    arr = []
     current = Folder.find(fid)
     until current.id == 0
-      stack << current.name
+      arr << current.name
       current = Folder.find(current.parent)
-
     end
-    "/" + stack.reverse.join("/")
+    "/" + arr.reverse.join("/")
   end
 
   def path_to_fid(path)
-    absolute_path = path[0] == "/"
+    absolute_path = path[0] == "/" # Checks to see if the path is absolute or not
+
     fid = absolute_path ? 0 : @current_dir.id
     path = path.split("/")
     path = path.drop(1) if absolute_path
@@ -34,7 +34,10 @@ class Tree
   end
 
   def ls(path = nil)
+    # if a path is provided, retrive its fid.
+    # Else fid will be the fid of the current path. 
     fid = path ? path_to_fid(path) : @current_dir.id
+
     folder = Folder.find(fid)
     f_list = Folder.all.select { |f| f.parent == folder.id }
     file_list = File.all.select { |f| f.parent == folder.id }
