@@ -102,9 +102,6 @@ class Tree
     ["bin", "boot", "dev", "etc", "home", "lib", "media", "mnt", "opt", "proc", "root", "run", "sbin", "srv", 
       "tmp", "usr", "var" ].each { |name| mkdir("/#{name}") }
     mkdir("/home/#{user_name}")
-    mkdir("/home/#{user_name}/Desktop")
-    mkdir("/home/#{user_name}/Downloads")
-    mkdir("/home/#{user_name}/Documents")
-    mkdir("/home/#{user_name}/Music")
+    ["Desktop", "Downloads", "Documents", "Music"].each { |name| mkdir("/home/#{user_name}/#{name}") }
   end
 end
