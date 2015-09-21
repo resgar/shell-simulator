@@ -39,11 +39,9 @@ class Tree
     fid = path ? path_to_fid(path) : @current_dir.id
 
     folder = Folder.find(fid)
-    f_list = Folder.all.select { |f| f.parent == folder.id }
-    file_list = File.all.select { |f| f.parent == folder.id }
-    f_list = f_list.collect { |f| f.name.light_blue }
-    file_list = file_list.collect { |f| f.name.yellow }
-    result = f_list + file_list
+    folders = Folder.all.select { |f| f.parent == folder.id }.map { |f| f.name.light_blue }
+    files = File.all.select { |f| f.parent == folder.id }.map { |f| f.name.yellow }
+    result = folders + files
 
     # Format and print the result
     result.each_with_index do |item, index|
