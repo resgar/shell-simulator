@@ -5,8 +5,7 @@ require_relative 'user'
 require_relative 'tree'
 
 
+# Write your Commands here
 user = User.new("LiveUser", "live@user.com")
-tree = Tree.new
-tree.initial_tree(user.name)
-tree.touch "home/LiveUser/myfile.txt"
-tree.ls "home/LiveUser/"
+user.tree.touch "home/LiveUser/myfile.txt"
+user.tree.ls "home/LiveUser/"

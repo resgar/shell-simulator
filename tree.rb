@@ -26,7 +26,7 @@ class Tree
         puts "#{item}: No such file or directory"
       end
     end  
-    return fid
+    fid
   end
 
   def pwd
@@ -46,9 +46,7 @@ class Tree
     # Format and print the result
     result.each_with_index do |item, index|
       print item + "\t\t"
-      if (index + 1) % 4 == 0
-        print "\n"
-      end
+      print "\n" if (index + 1) % 4 == 0
     end
     print "\n"
   end
