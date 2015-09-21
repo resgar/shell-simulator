@@ -2,8 +2,8 @@ class User
   attr_accessor :name, :email, :tree
 
   def initialize(name, email)
-    @name = name
-    @email = email
-    @tree = Tree.new(@name)
+    self.name = name
+    self.email = email
+    self.tree = Tree.new(@name)
   end
 end

@@ -4,9 +4,9 @@ class File
   @@files = []
 
   def initialize(name, parent)
-    @id = @@id = @@id + 1
-    @name = name
-    @parent = parent
+    self.id = @@id = @@id + 1
+    self.name = name
+    self.parent = parent
     @@files << self
   end
 
