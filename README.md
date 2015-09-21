@@ -6,10 +6,8 @@ Here is an example:
 
 ``` ruby
 user = User.new("LiveUser", "live@user.com")
-tree = Tree.new
-tree.initial_tree(user.name)
-tree.touch "home/LiveUser/myfile.txt"
-tree.ls "home/LiveUser/"
+user.tree.touch "home/LiveUser/myfile.txt"
+user.tree.ls "home/LiveUser/"
 ```
 
 This program supports the following commands:
