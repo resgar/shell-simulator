@@ -4,7 +4,6 @@ class User
   def initialize(name, email)
     @name = name
     @email = email
-    @tree = Tree.new
-    @tree.initial_tree(@name)
+    @tree = Tree.new(@name)
   end
 end

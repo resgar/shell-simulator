@@ -1,6 +1,7 @@
 class Tree
-  def initialize
+  def initialize(user_name)
     @current_dir = Folder.new('root', -1)
+    initial_tree(user_name)
   end
   
   def fid_to_path(fid)
