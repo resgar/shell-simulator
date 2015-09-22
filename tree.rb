@@ -47,7 +47,7 @@ class Tree
     # Format and print the result
     result.each_with_index do |item, index|
       print item + "\t\t"
-      print "\n" if (index + 1) % 4 == 0
+      print "\n" if (index + 1) % 4 == 0 and index != (result.length - 1)
     end
     print "\n"
   end
