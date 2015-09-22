@@ -24,6 +24,6 @@ class Folder
       selected = selected.select { |f| f.send(key) == value }
     end
     selected = selected[0]
-    selected.parent = nil
+    @@folders.delete_if { |folder| folder.id == selected.id }
   end
 end
