@@ -82,7 +82,7 @@ class Tree
     name = path.pop
     path = path.join("/")
     fid = path_to_fid(path)
-    File.delete({ name: name, parent: fid })
+    File.delete(name: name, parent: fid)
   end
 
   def rmdir(path)
@@ -91,8 +91,8 @@ class Tree
     folder_name = path.pop
     path = path.join("/")
     folder_parent = path_to_fid(path)
-    File.delete({ parent: fid })
-    Folder.delete({ name: folder_name, parent: folder_parent })
+    File.delete(parent: fid)
+    Folder.delete(name: folder_name, parent: folder_parent)
   end
   
   def initial_tree(user_name)
